@@ -1,31 +1,23 @@
 <section class="product">
     <div class="row">
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-4" *ngFor ="let product of products">
             <div class="card">
-                <img src="{{Product.img}}" class="card-img-top" alt="...">
+                <img src="{{product.img}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{title}}</h5>
-                  <p class="card-text">{{Product.name}}</p>
-                  <p class="card-text">{{Product.desc}}</p>
-                  <p>Giá: {{Product.price}}</p>
-                  <span>Tình trạng: {{Product.status ? 'Còn hàng' : 'Hết hàng'}}</span>
+                  <p class="card-text">{{product.name}}</p>
+                  <p class="card-text">{{product.desc}}</p>
+                  <p>Giá: {{product.price}}</p>
+                  <p>Tình trạng: {{product.status == 1 ? 'Còn hàng' : 'Hết hàng'}}</p>
                   <button class="btn btn-primary" (click)="onClickMe($event)">Mua hàng</button>
+                  <input type="text" name="product-name" [(ngModel)] = "product.name"/>
+                  <select name="product-status" id="" [(ngModel)] = "product.status">
+                    <option value="0">Hết hàng</option>
+                    <option value="1">Còn hàng</option>
+                  </select>
                 </div>
               </div>
         </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="card">
-              <img src="{{Product.img}}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-                <p class="card-text">{{Product.name}}</p>
-                <p class="card-text">{{Product.desc}}</p>
-                <p>Giá: {{Product.price}}</p>
-                <span>Tình trạng: {{Product.status ? 'Còn hàng' : 'Hết hàng'}}</span>
-                <input type="text" (keyup)="handleKeyUp($event)" class="form-control"/>
-              </div>
-            </div>
-      </div>
     </div>
 </section>
     

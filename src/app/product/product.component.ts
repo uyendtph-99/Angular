@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../Product'
+import {Product} from '../Product';
+import { Data } from '../data';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -7,13 +8,7 @@ import {Product} from '../Product'
 })
 export class ProductComponent implements OnInit {
   title: string= 'Product new';
-  Product: Product= {
-    name: "Tivi",
-    desc: "Tivi mới về",
-    img: "https://cdn.tgdd.vn/Products/Images/1942/164546/tivi-lg-49uk7500pta-25-550x340.jpg",
-    price: 23000000,
-    status: true
-  }
+  products = Data;
 
   constructor() { }
   
@@ -22,7 +17,5 @@ export class ProductComponent implements OnInit {
   onClickMe = event => {
     this.title = "Tivi sony";
   }
-  handleKeyUp = event => {
-    this.Product.name = event.target.value;
-  }
+  
 }
