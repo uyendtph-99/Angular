@@ -1,25 +1,32 @@
-<section class="product">
+<section class="product_new">
+<div class="container">
+  <div class="title_module_produdt">
+      <h5>SẢN PHẨM MỚI</h5>
+  </div>
     <div class="row">
-        <div class="col-lg-4 col-md-4" *ngFor ="let product of products">
+        <div class="col-lg-3 col-md-3" *ngFor ="let product of products">
             <div class="card">
                 <img src="{{product.img}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{title}}</h5>
                   <p class="card-text">{{product.name}}</p>
-                  <p class="card-text">{{product.desc}}</p>
                   <p>Giá: {{product.price}}</p>
                   <p>Tình trạng: {{product.status == 1 ? 'Còn hàng' : 'Hết hàng'}}</p>
-                  <button class="btn btn-primary" (click)="onClickMe($event)">Mua hàng</button>
-                  <input type="text" name="product-name" [(ngModel)] = "product.name"/>
-                  <select name="product-status" id="" [(ngModel)] = "product.status">
+                  <a class="btn btn-primary" (click)="detailProduct(product)">Chi tiết</a>
+                  <input type="hidden" name="product-name" [(ngModel)] = "product.name"/>
+                  <select class="hidden" name="product-status" id="" [(ngModel)] = "product.status">
                     <option value="0">Hết hàng</option>
                     <option value="1">Còn hàng</option>
                   </select>
+                  <button class="btn" (click)="removeProduct(product)">Remove</button>
                 </div>
               </div>
         </div>
+          <app-product-detail [product]="selectedProduct"></app-product-detail>
+        
     </div>
+</div>
 </section>
+
     
 
 

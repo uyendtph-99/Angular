@@ -7,15 +7,18 @@ import { Data } from '../data';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  title: string= 'Product new';
+ 
   products = Data;
-
+  selectedProduct:Product;
   constructor() { }
   
   ngOnInit() {
   }
-  onClickMe = event => {
-    this.title = "Tivi sony";
+  detailProduct(product){
+    this.selectedProduct = product;
   }
-  
+  removeProduct(product){
+    this.products = this.products.filter(item => item.id != product.id)
+  }
+
 }
