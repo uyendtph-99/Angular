@@ -89,5 +89,14 @@ export const Data: Product[] = [
         img: "https://img1.lostbird.vn/w480/2018/08/21/354871/8.jpg",
         price: 130000,
         status: true
+    },
+    {
+        id: 11,
+        name: "Bánh pizza",
+        desc: "Bánh pizza trân châu kết hợp vị mặn và ngọt tiếp tục 'làm mưa làm gió'",
+        content: "",
+        img: "https://img1.lostbird.vn/w480/2018/08/21/354871/8.jpg",
+        price: 150000,
+        status: true
     }
 ]

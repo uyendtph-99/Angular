@@ -1,0 +1,36 @@
+<section class="product_featured">
+    <div class="container">
+        <div class="title_module_produdt">
+            <h5>SẢN PHẨM MỚI</h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                <div  class="owl-carousel owl-theme not-dot2" data-play="true" data-dot= "false" data-nav= "false" data-lg-items="3" data-md-items="3" data-sm-items="2" data-xs-items="1" data-margin="15">
+                <div class="card" *ngFor ="let product of products">
+                <div class="main">
+                    <img src="{{product.img}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{product.name}}</p>
+                        <p>Giá: {{product.price}}</p>
+                        <a class="btn btn-primary" (click)="detailProduct(product)">Chi tiết</a>
+                    <input type="hidden" name="product-name" [(ngModel)] = "product.name"/>
+                    <select class="hidden" name="product-status" id="" [(ngModel)] = "product.status">
+                      <option value="0">Hết hàng</option>
+                      <option value="1">Còn hàng</option>
+                    </select>
+                    </div>
+                    <div class="over">
+							<button class="btn" type="button">View</button>
+						</div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+
+

@@ -4,21 +4,21 @@
       <h5>SẢN PHẨM MỚI</h5>
   </div>
     <div class="row">
-        <div class="col-lg-3 col-md-3" *ngFor ="let product of products">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor ="let product of products">
             <div class="card">
-                <img src="{{product.img}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">{{product.name}}</p>
-                  <p>Giá: {{product.price}}</p>
-                  <p>Tình trạng: {{product.status == 1 ? 'Còn hàng' : 'Hết hàng'}}</p>
-                  <a class="btn btn-primary" (click)="detailProduct(product)">Chi tiết</a>
-                  <input type="hidden" name="product-name" [(ngModel)] = "product.name"/>
-                  <select class="hidden" name="product-status" id="" [(ngModel)] = "product.status">
-                    <option value="0">Hết hàng</option>
-                    <option value="1">Còn hàng</option>
-                  </select>
-                  <button class="btn" (click)="removeProduct(product)">Remove</button>
-                </div>
+              <div class="main">
+                  <img src="{{product.img}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">{{product.name}}</p>
+                    <p class="price">Giá: <span>{{product.price}} <sup>đ</sup></span></p>
+                    <p>Tình trạng: {{product.status == 1 ? 'Còn hàng' : 'Hết hàng'}}</p>
+                    <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
+                  </div>
+                  <div class="over">
+                      <a href="" title="Mua hàng"> <button class="btn btn-primary button_35" type="button"><i class="fa fa-cart-plus"></i></button></a>
+                      <a href="" title="Chi tiết"> <button class="btn button_35 btn-detail"><i class="fa fa-eye"></i></button></a>
+                    </div>
+              </div>
               </div>
         </div>
           <app-product-detail [product]="selectedProduct"></app-product-detail>

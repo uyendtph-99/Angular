@@ -11,3 +11,26 @@ footer{
     width: 80px;
     height:80px;
 }
+.follow_option{
+    margin-top: 20px;
+}
+.follow_option li{
+    list-style:none;
+    display:inline-block;
+    margin-right: 10px;
+}
+.follow_option li a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6dd3d1;
+    line-height: 40px;
+    text-align: center;
+}
+.follow_option li a:hover{
+    background: #e57368;
+}
+.follow_option li a .fa{
+    color: #fff;
+}
