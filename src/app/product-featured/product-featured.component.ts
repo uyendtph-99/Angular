@@ -8,9 +8,12 @@ import { Data } from '../data';
 })
 export class ProductFeaturedComponent implements OnInit {
   products = Data;
+  selectedProduct:Product;
   constructor() { }
 
   ngOnInit() {
   }
-
+  detailProduct(product){
+    this.selectedProduct = product;
+  }
 }

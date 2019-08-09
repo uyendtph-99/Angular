@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar img{
+    width: 80px;
+    height:80px;
+    margin-right: 40px;
+}
+a.active{
+    color: #f53f2c;
+}

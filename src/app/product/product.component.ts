@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from '../Product';
 import { Data } from '../data';
 import {ProductService} from '../services/product.service';
+import { isNgTemplate } from '@angular/compiler';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -10,7 +11,7 @@ import {ProductService} from '../services/product.service';
 export class ProductComponent implements OnInit {
  
   products : Product[];
-  selectedProduct:Product;
+  //selectedProduct:Product;
   constructor(
     private productService: ProductService
   ) { }
@@ -19,13 +20,17 @@ export class ProductComponent implements OnInit {
     this.getPro();
   }
   getPro(){
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe(data => {
+      //console.log(data);
+      this.products = data;
+    });
   }
-  detailProduct(product){
-    this.selectedProduct = product;
-  }
+
   removeProduct(product){
-    this.products = this.products.filter(item => item.id != product.id)
+    this.productService.deleteProduct(product.id).subscribe( data =>{
+      //console.log(data);
+      this.products = this.products.filter(item => item.id != data.id)
+    })
   }
 
 }

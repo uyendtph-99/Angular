@@ -2,23 +2,3 @@
 	margin-right: 21px;
 	border: 1px solid lightgrey;
 }
-.main{
-	width: 100%;
-	position: relative;
-}
-.over{
-	position: absolute;
-	bottom:0;
-	left: 0;
-	right: 0;
-	background: rgba(0,0,0,0.5);
-	overflow: hidden;
-	width: 100%;
-	height:0;
-	transition:.5s  ease;
-
-}
-.main:hover .over {
-	bottom: 0;
-	height: 10%;
-}

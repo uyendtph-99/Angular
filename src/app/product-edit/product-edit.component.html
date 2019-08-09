@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="title"><h2>Sửa sản phẩm</h2></div>
+    <div *ngIf="product">
+        <form action="">
+            <div class="form-group">
+                <label for="">Tên sản phẩm</label>
+                <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
+            </div>
+            <div class="form-group">
+                    <label for="">Ảnh sản phẩm</label>
+                    <br>
+                    <img src="{{product.image}}">
+                    <input type="text" class="form-control" [(ngModel)]="product.image" name="image">
+                </div>
+            <div class="form-group">
+                <label for="">Giá</label>
+                <input type="text" class="form-control" [(ngModel)]="product.price" name="price">
+            </div>
+            <div class="form-group">
+                <label for="">Mô tả ngắn</label>
+                <input type="text" class="form-control" [(ngModel)]="product.desc" name="desc">
+            </div>
+            
+            <button class="btn btn-primary" (click)="saveProduct()">Save</button>
+        </form>
+    </div>
+</div>

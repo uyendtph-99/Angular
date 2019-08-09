@@ -1,0 +1,29 @@
+.section1{
+    border-bottom: 1px solid #ccc;
+}
+.so{
+    float: left;
+    font-size: 70px;
+    padding-right: 0px;
+}
+.bold{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 5px;
+}
+.left_number {
+    width: 80px;
+    display: block;
+    float: left;
+}
+.right_number {
+    -webkit-width:calc(100% - 80px - 10px);
+    -moz-width:calc(100% - 80px - 10px);
+    -ms-width:calc(100% - 80px - 10px);
+    -o-width:calc(100% - 80px - 10px);
+    width:calc(100% - 80px - 10px);
+    margin-left: 10px;
+    display: block;
+    float: left;
+}

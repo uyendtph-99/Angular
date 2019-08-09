@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductFeaturedComponent } from './product-featured/product-featured.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { HomeComponent } from './home/home.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ManagerComponent } from './manager/manager.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +30,20 @@ import { AddProductComponent } from './add-product/add-product.component';
     FooterComponent,
     ProductDetailComponent,
     ProductFeaturedComponent,
-    AddProductComponent
+    AddProductComponent,
+    HomeComponent,
+    NotfoundComponent,
+    ManagerComponent,
+    ProductEditComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

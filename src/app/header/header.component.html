@@ -7,14 +7,14 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="" routerLinkActive="active">Trang chủ <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Giới thiệu</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" routerLink="/product" routerLinkActive="active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sản phẩm
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -28,6 +28,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Liên hệ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/manager" routerLinkActive="active">Quản lý</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
