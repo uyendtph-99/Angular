@@ -17,7 +17,7 @@
                     <tbody>
                         <tr *ngFor="let cate of categories">
                             <td>{{cate.id}}</td>
-                            <td><a routerLink="/category/{{cate.cateId}}">{{cate.name}}</a></td>
+                            <td><a routerLink="/category/{{cate.id}}">{{cate.name}}</a></td>
                             <td><img style="width: 100px;" src="{{cate.image}}" class="card-img-top" alt="...">
                             <td>
                                 <a routerLink="/cate/edit/{{cate.id}}" class="btn btn-primary">Edit</a>

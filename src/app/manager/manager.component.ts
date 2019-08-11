@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./manager.component.css']
 })
 export class ManagerComponent implements OnInit {
-   cateId = '0';
+   //cateId = '0';
   products : Product[];
   constructor(
     private productService: ProductService,
@@ -28,7 +28,6 @@ export class ManagerComponent implements OnInit {
   getProducts(){
      ;
     this.routes.params.subscribe(param => {
-      this.cateId = this.routes.snapshot.paramMap.get('cateId')
       this.productService.getProducts(param.cateId).subscribe(data => {
         this.products = data;
       })
