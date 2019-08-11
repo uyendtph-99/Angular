@@ -1,18 +1,29 @@
+<!-- Breadcrumb Area Start Here -->
+<div class="breadcrumb-area pt-65 pb-70 bg-img" style="background-image:url(https://www.proteloinc.com/wp-content/uploads/2018/05/golf-banner.png);">
+    <div class="container">
+        <div class="breadcrumb-wrap text-center">
+            <h3 style="color:#fff">Manager</h3>
+            <ol class="breadcrumb breadcrumb-list">
+                <li class="breadcrumb-item"><a style="color:#fff" href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" style="color:rgb(214, 135, 135)">Manager</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+  <!-- Breadcrumb Area End Here -->
 <div class="section section_manager">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a routerLink="/product/add" class="btn btn-primary">Add</a>
-                
+                <a routerLink="/category/{{cateId}}/product/add" class="btn btn-primary">Add</a>
             </div>
-
-            
             <div class="col-lg-12">
                 <div class="panel panel-default ex1">
                     <div class="panel-heading">
                         <div class="panel-title"><span class="glyphicon glyphicon-th-list"></span> DANH SÁCH SẢN PHẨM
                         </div>
                     </div>
+                   
                     <table class="table table-bordered -table-hover">
                         <thead>
                             <tr>
@@ -32,7 +43,7 @@
                                 </td>
                                 <td>{{product.price}}</td>
                                 <td>{{product.desc}}</td>
-                                <td><a routerLink="/product/edit/{{product.id}}" class="btn btn-primary">Edit</a></td>
+                                <td><a routerLink="/category/{{cateId}}/product/edit/{{product.id}}" class="btn btn-primary">Edit</a></td>
                                 <td><a style="color: #fff" (click)="removeProduct(product)"
                                         class="btn btn-danger">Delete</a></td>
                             </tr>

@@ -20,12 +20,11 @@ export class ProductComponent implements OnInit {
     this.getPro();
   }
   getPro(){
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProduct().subscribe(data => {
       //console.log(data);
       this.products = data;
     });
   }
-
   removeProduct(product){
     this.productService.deleteProduct(product.id).subscribe( data =>{
       //console.log(data);

@@ -10,6 +10,10 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ManagerCategoryComponent } from './manager-category/manager-category.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { CateEditComponent } from './cate-edit/cate-edit.component';
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
 
 
 const routes: Routes = [
@@ -26,16 +30,25 @@ const routes: Routes = [
     path:'product', component: ProductComponent
   },
   {
-    path:'manager', component: ManagerComponent
+    path:'manager-category', component: ManagerCategoryComponent
   },
   {
-    path:'product/detail/:id', component: ProductDetailComponent
+    path:'category/:cateId/product/detail/:id', component: ProductDetailComponent
   },
   {
-    path:'product/add', component: AddProductComponent
+    path:'category/:id/product/add', component: AddProductComponent
   },
   {
-    path:'product/edit/:id', component: ProductEditComponent
+    path:'category/add', component: AddCategoryComponent
+  },
+  {
+    path:'category/:cateId/product/edit/:id', component: ProductEditComponent
+  },
+  {
+    path:'cate/edit/:id', component: CateEditComponent
+  },
+  { 
+    path: 'category/:cateId', component: ManagerComponent
   },
   {
     path:'contact', component: ContactComponent

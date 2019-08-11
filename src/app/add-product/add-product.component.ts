@@ -1,7 +1,7 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import {ProductService} from '../services/product.service';
 import {Product} from '../Product';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -10,19 +10,30 @@ import { Router } from '@angular/router';
 })
 export class AddProductComponent implements OnInit {
   //@Input('data') products : Product[];
+  //id='0';
   product: Product = new Product();
 
   constructor(
     private productService: ProductService,
-    private router : Router
+    private routes : ActivatedRoute,
+    private router: Router
+
   ) { }
 
   ngOnInit() {
   }
   addProduct(){
-    this.productService.addProduct(this.product).subscribe(data =>{
-      this.router.navigateByUrl('/manager')
-    });
+    this.routes.params.subscribe(param => {
+      this.productService.addProduct(this.product,param.id).subscribe(data =>{
+        this.router.navigateByUrl('/category/'+ param.id);
+      });
+    })
+    // this.id = this.routes.snapshot.paramMap.get('id') ;
+		// 	this.productService.addProduct(this.product, this.id)
+		// 	.subscribe(data => {
+		// 		console.log(data);
+    //     this.router.navigateByUrl('/category/'+ this.id);
+		// 	})
   }
 
 }

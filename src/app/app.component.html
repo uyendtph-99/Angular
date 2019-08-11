@@ -1,10 +1,9 @@
-
 <!-- Main Header Area Start Here -->
 <header class="header-sticky">
     <div class="coustom-container">
         <div class="main-header">
             <div class="row">
-               <!-- Logo Start Here -->
+                <!-- Logo Start Here -->
                 <div class="col-xl-2 col-lg-3 col-md-5 col-sm-6 col-5">
                     <div class="logo">
                         <a href="index.html"><img src="assets/image/logo/logo.png" alt="logo"></a>
@@ -23,7 +22,15 @@
                                     <li class="position-static"><a routerLink="/about">About</a></li>
                                     <li><a routerLink="/product" routerLinkActive="active">Shop</a></li>
                                     <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-                                    <li><a routerLink="/manager" routerLinkActive="active">Manager</a></li>
+                                    <li>
+                                        <a routerLink="/manager" routerLinkActive="active">Manager</a>
+                                        <!-- Home Version Dropdown Start -->
+                                        <ul class="ht-dropdown single-dropdown">
+                                            <li><a routerLink="/manager">Product</a></li>
+                                            <li><a routerLink="/manager-category">Category</a></li>
+                                        </ul>
+                                        <!-- Home Version Dropdown End -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -69,8 +76,10 @@
                                 <ul class="ht-dropdown search-box-view">
                                     <li>
                                         <form action="#" class="position-relative">
-                                            <input class="email" placeholder="Search our catalog" name="email" type="text">
-                                            <button type="submit" class="submit"><i class="icon-search" aria-hidden="true"></i></button>
+                                            <input class="email" placeholder="Search our catalog" name="email"
+                                                type="text">
+                                            <button type="submit" class="submit"><i class="icon-search"
+                                                    aria-hidden="true"></i></button>
                                         </form>
                                     </li>
                                 </ul>
@@ -137,17 +146,12 @@
 </header>
 <!-- Main Header Area End Here -->
 
-  <!-- 
-    <app-product></app-product>
-  <app-banner></app-banner>
-  <app-add-product (keyAddress)="getAddress($event)"></app-add-product>
-  <app-product-featured></app-product-featured>
-  <app-footer></app-footer> -->
-  
-  
-  <router-outlet></router-outlet>
-  <!-- Footer Area Start Here -->
-  <footer class="footer-area bg-img">
+
+
+
+<router-outlet></router-outlet>
+<!-- Footer Area Start Here -->
+<footer class="footer-area bg-img">
     <div class="footer-top bg-img pt-82 pb-50" style="background-image:url(assets/image/bg-image/footer-bg.jpg);">
         <div class="container">
             <div class="row">
@@ -263,5 +267,3 @@
     </div>
 </footer>
 <!-- Footer Area End Here -->
- 
-

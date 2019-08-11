@@ -11,7 +11,6 @@ import { BannerComponent } from './banner/banner.component';
 import { ProductComponent } from './product/product.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductFeaturedComponent } from './product-featured/product-featured.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -19,6 +18,10 @@ import { ManagerComponent } from './manager/manager.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { ManagerCategoryComponent } from './manager-category/manager-category.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { CateEditComponent } from './cate-edit/cate-edit.component';
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
 
 
 @NgModule({
@@ -29,14 +32,17 @@ import { AboutComponent } from './about/about.component';
     ProductComponent,
     FooterComponent,
     ProductDetailComponent,
-    ProductFeaturedComponent,
     AddProductComponent,
     HomeComponent,
     NotfoundComponent,
     ManagerComponent,
     ProductEditComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    ManagerCategoryComponent,
+    AddCategoryComponent,
+    CateEditComponent,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,

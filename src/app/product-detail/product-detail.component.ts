@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  @Input() product: Product;
-  //product : Product;
+  //@Input() product: Product;
+  product : Product;
   constructor( private productService: ProductService, 
       private routes : ActivatedRoute
     ) { }

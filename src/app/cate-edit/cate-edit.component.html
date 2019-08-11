@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="title">
+        <h2>Sửa danh mục</h2>
+    </div>
+    <div *ngIf="cate">
+        <form action="">
+            <div class="form-group">
+                <label for="">Tên sản phẩm</label>
+                <input type="text" class="form-control" [(ngModel)]="cate.name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="">Ảnh sản phẩm</label>
+                <br>
+                <img src="{{cate.image}}">
+                <input type="text" class="form-control" [(ngModel)]="cate.image" name="image">
+            </div>
+            <button class="btn btn-primary" (click)="saveCate()">Save</button>
+        </form>
+    </div>
+</div>
