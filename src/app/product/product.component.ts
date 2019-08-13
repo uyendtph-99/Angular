@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../Product';
-import { Data } from '../data';
 import {ProductService} from '../services/product.service';
 import { isNgTemplate } from '@angular/compiler';
 @Component({
@@ -25,11 +24,11 @@ export class ProductComponent implements OnInit {
       this.products = data;
     });
   }
-  removeProduct(product){
-    this.productService.deleteProduct(product.id).subscribe( data =>{
-      //console.log(data);
-      this.products = this.products.filter(item => item.id != data.id)
-    })
-  }
+  // removeProduct(product){
+  //   this.productService.deleteProduct(product.cateId,product.id).subscribe(data=> {
+  //     console.log(data);
+  //     this.products = this.products.filter(item => item.id != data.id);
+  //   })
+  // }
 
 }

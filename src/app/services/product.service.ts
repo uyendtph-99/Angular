@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Data } from '../Data';
 import { Product } from '../Product';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { Category } from '../Category';
 
@@ -10,7 +9,7 @@ import { Category } from '../Category';
 })
 export class ProductService {
   // private products = DataProduct;
-  private API: string = 'https://5d426e6fbc64f90014a56a4d.mockapi.io';
+  private API: string = 'http://5d426e6fbc64f90014a56a4d.mockapi.io';
   constructor( private http: HttpClient) { }
 
   getCates(): Observable<Category[]>{
@@ -32,8 +31,8 @@ export class ProductService {
     return this.http.put<Category>(`${this.API}/Category/${cate.id}`, cate);
   }
 
-  addProduct(data,id):Observable<Product>{
-    return this.http.post<Product>(`${this.API}/Category/${id}/Products`, data);
+  addProduct(product,cateId):Observable<Product>{
+    return this.http.post<Product>(`${this.API}/Category/${cateId}/Products`, product);
   }
 
   getProduct(): Observable<Product[]>{
@@ -44,15 +43,20 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.API}/Category/${cateId}/Products`);
   }
 
+  getProductDetail(cateId,id): Observable<Product>{
+    return this.http.get<Product>(`${this.API}/Category/${cateId}/Products/${id}`);
+  } 
 
-  getProductDetail(id):Observable<Product>{
-    return this.http.get<Product>(`${this.API}/Products/${id}`);
+  getEditProduct(cateId,id): Observable<Product>{
+    return this.http.get<Product>(`${this.API}/Category/${cateId}/Products/${id}`);
   }
-  deleteProduct(id): Observable<Product>{
-    return this.http.delete<Product>(`${this.API}/Products/${id}`);
+
+  deleteProduct(id,cateId): Observable<Product>{
+    return this.http.delete<Product>(`${this.API}/Category/${cateId}/Products/${id}`);
   }
-  saveProduct(product): Observable<Product>{
-    return this.http.put<Product>(`${this.API}/Products/${product.id}`, product);
+
+  saveProduct(product,cateId,id): Observable<Product>{
+    return this.http.put<Product>(`${this.API}/Category/${cateId}/Products/${id}`, product);
   }
 
 }

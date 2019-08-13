@@ -1,5 +1,6 @@
 <!-- Breadcrumb Area Start Here -->
-<div class="breadcrumb-area pt-65 pb-70 bg-img" style="background-image:url(https://www.proteloinc.com/wp-content/uploads/2018/05/golf-banner.png);">
+<div class="breadcrumb-area pt-65 pb-70 bg-img"
+    style="background-image:url(https://www.proteloinc.com/wp-content/uploads/2018/05/golf-banner.png);">
     <div class="container">
         <div class="breadcrumb-wrap text-center">
             <h3 style="color:#fff">Manager</h3>
@@ -9,13 +10,14 @@
             </ol>
         </div>
     </div>
-  </div>
-  <!-- Breadcrumb Area End Here -->
+</div>
+<!-- Breadcrumb Area End Here -->
 <div class="section section_manager">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a routerLink="/category/{{cateId}}/product/add" class="btn btn-primary">Add</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add">Add
+                    Product</button>
             </div>
             <div class="col-lg-12">
                 <div class="panel panel-default ex1">
@@ -23,7 +25,7 @@
                         <div class="panel-title"><span class="glyphicon glyphicon-th-list"></span> DANH SÁCH SẢN PHẨM
                         </div>
                     </div>
-                   
+
                     <table class="table table-bordered -table-hover">
                         <thead>
                             <tr>
@@ -38,12 +40,15 @@
                         <tbody>
                             <tr *ngFor="let product of products">
                                 <td>{{product.id}}</td>
-                                <td><a routerLink="/product/detail/{{product.id}}">{{product.name}}</a></td>
+                                <td><a
+                                        routerLink="/category/{{product.cateId}}/product/detail/{{product.id}}">{{product.name}}</a>
+                                </td>
                                 <td><img style="width: 100px;" src="{{product.image}}" class="card-img-top" alt="...">
                                 </td>
                                 <td>{{product.price}}</td>
                                 <td>{{product.desc}}</td>
-                                <td><a routerLink="/category/{{cateId}}/product/edit/{{product.id}}" class="btn btn-primary">Edit</a></td>
+                                <td><a routerLink="/category/{{product.cateId}}/product/edit/{{product.id}}"
+                                        class="btn btn-primary">Edit</a></td>
                                 <td><a style="color: #fff" (click)="removeProduct(product)"
                                         class="btn btn-danger">Delete</a></td>
                             </tr>
@@ -51,7 +56,43 @@
                     </table>
                 </div>
             </div>
-            <!-- <app-product-detail [product]="selectedProduct"></app-product-detail> -->
+            <!-- Modal -->
+            <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Add Product</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="">Tên sản phẩm</label>
+                                    <input type="text" class="form-control" [(ngModel)]="product.name" name="productName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ảnh sản phẩm</label>
+                                    <input type="text" class="form-control" [(ngModel)]="product.image" name="image">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Giá</label>
+                                    <input type="text" class="form-control" [(ngModel)]="product.price" name="price">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Mô tả ngắn</label>
+                                    <input type="text" class="form-control" [(ngModel)]="product.desc" name="desc">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button data-dismiss="modal" (click)="addProduct()" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -22,7 +22,7 @@ export class ProductDetailComponent implements OnInit {
   getProductDetail(){
   this.routes.params.subscribe(param =>{
     //console.log(param)
-    this.productService.getProductDetail(param.id).subscribe( data =>{
+    this.productService.getProductDetail(param.cateId,param.id).subscribe( data =>{
       this.product = data;
     })
   }

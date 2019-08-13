@@ -2,8 +2,7 @@ export class Product{
     id: number;
     name: string;
     desc: string;
-    content: string;
-    img: string;
+    image: string;
     price: number;
-    status: boolean;
+    cateId: number;
 }
