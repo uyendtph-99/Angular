@@ -27,10 +27,7 @@ const routes: Routes = [
     path:'about', component: AboutComponent
   },
   {
-    path:'product', component: ProductComponent
-  },
-  {
-    path:'manager-category', component: ManagerCategoryComponent
+    path:'manager', component: ManagerCategoryComponent
   },
   {
     path:'category/:cateId/product/detail/:id', component: ProductDetailComponent
@@ -49,6 +46,9 @@ const routes: Routes = [
   },
   { 
     path: 'category/:cateId', component: ManagerComponent
+  },
+  { 
+    path: 'category/:cateId/products', component: ProductComponent
   },
   {
     path:'contact', component: ContactComponent

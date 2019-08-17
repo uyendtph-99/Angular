@@ -2,19 +2,23 @@
     <div class="title">
         <h2>Sửa danh mục</h2>
     </div>
-    <div *ngIf="cate">
-        <form action="">
-            <div class="form-group">
-                <label for="">Tên sản phẩm</label>
-                <input type="text" class="form-control" [(ngModel)]="cate.name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="">Ảnh sản phẩm</label>
-                <br>
-                <img src="{{cate.image}}">
-                <input type="text" class="form-control" [(ngModel)]="cate.image" name="image">
-            </div>
-            <button class="btn btn-primary" (click)="saveCate()">Save</button>
-        </form>
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="editcate">
+        <div *ngIf="cate">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Tên sản phẩm</label>
+                    <input type="text" class="form-control" [(ngModel)]="cate.name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="">Ảnh sản phẩm</label>
+                    <br>
+                    <img style="width: 100px" src="{{cate.image}}">
+                    <input type="text" class="form-control" [(ngModel)]="cate.image" name="image">
+                </div>
+                <button class="btn btn-primary" (click)="saveCate()">Save</button>
+            </form>
+        </div>
+    </div>
     </div>
 </div>

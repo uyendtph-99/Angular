@@ -1,5 +1,6 @@
 <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="addcate">
             <form action="">
                 <div class="form-group">
                     <label for="">Tên danh mục</label>
@@ -9,7 +10,8 @@
                     <label for="">Ảnh danh mục</label>
                     <input type="text" class="form-control" [(ngModel)]="cate.image" name="image">
                 </div>
-                <button class="bt btn-primary" data-dismiss="modal" (click)="addCategory()">Submit</button>
+                <button class="btn btn-primary" (click)="addCategory()">Submit</button>
             </form>
         </div>
     </div>
+</div>

@@ -35,9 +35,6 @@ export class ProductService {
     return this.http.post<Product>(`${this.API}/Category/${cateId}/Products`, product);
   }
 
-  getProduct(): Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.API}`);
-  }
   
   getProducts(cateId): Observable<Product[]>{
     return this.http.get<Product[]>(`${this.API}/Category/${cateId}/Products`);
@@ -46,10 +43,6 @@ export class ProductService {
   getProductDetail(cateId,id): Observable<Product>{
     return this.http.get<Product>(`${this.API}/Category/${cateId}/Products/${id}`);
   } 
-
-  getEditProduct(cateId,id): Observable<Product>{
-    return this.http.get<Product>(`${this.API}/Category/${cateId}/Products/${id}`);
-  }
 
   deleteProduct(id,cateId): Observable<Product>{
     return this.http.delete<Product>(`${this.API}/Category/${cateId}/Products/${id}`);

@@ -30,7 +30,7 @@ export class ProductEditComponent implements OnInit {
   }
   getProduct(){
     this.routes.params.subscribe(param => {
-      this.productService.getEditProduct(param.cateId,param.id).subscribe(data => {
+      this.productService.getProductDetail(param.cateId,param.id).subscribe(data => {
         //console.log(data);
         this.product = data;
       })

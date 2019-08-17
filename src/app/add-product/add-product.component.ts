@@ -34,7 +34,7 @@ export class AddProductComponent implements OnInit {
     this.routes.params.subscribe(param => {
       this.productService.addProduct(this.product,param.cateId).subscribe(data =>{
         console.log(data);
-        this.router.navigateByUrl(`/category/${param.cateId}` );
+        this.router.navigateByUrl(`/category/` );
       });
     })
   }

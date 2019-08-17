@@ -9,10 +9,9 @@ import { Category } from '../Category';
   styleUrls: ['./manager.component.css']
 })
 export class ManagerComponent implements OnInit {
-   //cateId = '0';
   product: Product = new Product();
   products : Product[];
-  cates: Category[];
+  cates: Category;
   constructor(
     private productService: ProductService,
     private routes: ActivatedRoute,
@@ -20,12 +19,20 @@ export class ManagerComponent implements OnInit {
   ) { }
   ngOnInit() {
     this.getProducts();
+    this.getCategory();
   }
-  
+  getCategory(){
+    this.routes.params.subscribe(param => {
+      console.log(param);
+      this.productService.getCategory(param.cateId).subscribe(data => {
+        this.cates = data;
+      })
+    })
+  }
   getProducts(){
     this.routes.params.subscribe(param => {
       this.productService.getProducts(param.cateId).subscribe(data => {
-        console.log(data);
+        //console.log(data);
         this.products = data;
       })
     })
@@ -34,14 +41,14 @@ export class ManagerComponent implements OnInit {
   addProduct(){
     this.routes.params.subscribe(param => {
       this.productService.addProduct(this.product,param.cateId).subscribe(data =>{
-        //console.log(data);
-        this.router.navigateByUrl(`/category/${data.cateId}`);
+        this.products.push(data);
+        console.log(data);
       });
     })
   }
   removeProduct(product){
     this.productService.deleteProduct(product.id,product.cateId).subscribe(data=> {
-     // console.log(data);
+      console.log(data);
       this.products = this.products.filter(item => item.id != data.id);
     })
   }

@@ -19,7 +19,7 @@ export class AddCategoryComponent implements OnInit {
   }
   addCategory(){
     this.productService.addCategory(this.cate).subscribe(data =>{
-      this.router.navigateByUrl('/manager-category')
+      this.router.navigateByUrl('/manager')
     });
   }
 }

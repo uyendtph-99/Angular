@@ -30,7 +30,7 @@ export class CateEditComponent implements OnInit {
   }
   saveCate() {
     this.productService.saveCate(this.cate).subscribe(data => {
-      this.router.navigateByUrl("/manager-category");
+      this.router.navigateByUrl("/manager");
     })
   }
 }
