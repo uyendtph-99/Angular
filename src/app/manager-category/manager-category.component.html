@@ -15,17 +15,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let cate of categories">
+                        <tr *ngFor="let cate of categories | paginate: {itemsPerPage:3, currentPage: p}">
                             <td>{{cate.id}}</td>
                             <td><a routerLink="/category/{{cate.id}}">{{cate.name}}</a></td>
                             <td><img style="width: 100px;" src="{{cate.image}}" class="card-img-top" alt="...">
                             <td>
                                 <a routerLink="/cate/edit/{{cate.id}}" class="btn btn-primary">Edit</a>
                             </td>
-                            <td><a style="color: #fff" (click)="removeCategory(cate)" class="btn btn-danger">Delete</a></td>
+                            <td><button class="btn btn-danger" mwlConfirmationPopover [popoverTitle]="popoverTitle"
+                                [popoverMessage]="popoverMessage" placement="left" [confirmText]="confirmText"
+                                (confirm)="removeCategory(cate)" (cancel)="cancelClicked = true">
+                                Delete
+                            </button></td>
                         </tr>
                     </tbody>
                 </table>
+                <pagination-controls (pageChange)="p =$event"></pagination-controls>
             </div>
         </div>
     </div>

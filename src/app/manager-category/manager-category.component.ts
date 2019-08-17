@@ -9,6 +9,11 @@ import { Category } from '../Category';
 })
 export class ManagerCategoryComponent implements OnInit {
   categories : Category[];
+  public popoverTitle: string = 'Delete Product';
+  public popoverMessage: string = 'Bạn có chắc chắn muốn xóa danh mục này?';
+  public  confirmText: string = 'Yes <i class="glyphicon glyphicon-ok"></i>';
+  public confirmClicked: boolean = false;
+  public cancelClicked: boolean = false;
   constructor(
     private productService: ProductService
   ) { }

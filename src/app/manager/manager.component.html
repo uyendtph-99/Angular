@@ -14,9 +14,15 @@
 <div class="section section_manager">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#add">Add
                     Product</button>
+            </div>
+            <div class="col-lg-6">
+                <div class="search-hero">
+                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                        placeholder="&#61442;  Start searching for a hero by id or name or country">
+                </div>
             </div>
             <div class="col-lg-12">
                 <div class="panel panel-default ex1">
@@ -38,8 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr
-                                *ngFor="let product of products | paginate: {itemsPerPage:5, currentPage: p}; let i = index">
+                            <tr *ngFor="let product of products | filter:searchText | paginate: {itemsPerPage:5, currentPage: p}">
                                 <td>{{product.id}}</td>
                                 <td><a
                                         routerLink="/category/{{product.cateId}}/product/detail/{{product.id}}">{{product.name}}</a>
