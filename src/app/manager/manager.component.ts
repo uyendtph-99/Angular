@@ -12,6 +12,11 @@ export class ManagerComponent implements OnInit {
   product: Product = new Product();
   products : Product[];
   cates: Category;
+  public popoverTitle: string = 'Delete Product';
+  public popoverMessage: string = 'Bạn có chắc chắn muốn xóa sản phẩm này?';
+  public  confirmText: string = 'Yes <i class="glyphicon glyphicon-ok"></i>';
+  public confirmClicked: boolean = false;
+  public cancelClicked: boolean = false;
   constructor(
     private productService: ProductService,
     private routes: ActivatedRoute,
@@ -52,5 +57,6 @@ export class ManagerComponent implements OnInit {
       this.products = this.products.filter(item => item.id != data.id);
     })
   }
+  
   
 }

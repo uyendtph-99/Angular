@@ -88,7 +88,7 @@
             <div class="tab-content shop-content">
                 <div id="grid-view" class="tab-pane fade active in" role="tabpanel">
                     <div class="row"> 
-                        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let product of products"> 
+                        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let product of products | paginate: {itemsPerPage:8, currentPage: p}"> 
                             <div class="product-box"> 
                                 <div class="product-media"> 
                                     <a routerLink="/category/{{product.cateId}}/product/detail/{{product.id}}"> <img class="prod-img" alt="" src="{{product.image}}" /> </a>    
@@ -109,31 +109,12 @@
                             </div>
                         </div>                               
                     </div>
-
-                    <div class="rel-div pt-50">
-                        <div class="divider-full-1"></div>
-                        <div class="nav-page">
-                            <a href="#" class="fa fa-long-arrow-left left"></a> 
-                            <a href="#" class="fa fa-long-arrow-right right"></a> 
-                        </div>
-                    </div>                            
-
-                    <div class="pagination-wrap">
-                        <ul class="pagintn">                                  
-                            <li><a href="#">01</a></li>
-                            <li><a href="#">02</a></li>
-                            <li><a href="#">03</a></li>
-                            <li><a href="#">04</a></li>
-                            <li><a href="#">05</a></li>
-                            <li><a href="#">...</a></li>
-                            <li><a href="#">15</a></li>                                    
-                        </ul>
-                    </div>
+                    <pagination-controls (pageChange)="p =$event"></pagination-controls>
                 </div>
 
                 <div id="list-view" class="tab-pane fade" role="tabpanel">
                     <div class="row"> 
-                        <div class="col-md-6 col-sm-12" *ngFor="let product of products"> 
+                        <div class="col-md-6 col-sm-12" *ngFor="let product of products | paginate: {itemsPerPage:6, currentPage: p}"> 
                             <div class="deal-item list-view">
                                 <div class="deal-icons">                                         
                                     <a href="#" class="fa fa-heart"></a>
@@ -166,17 +147,7 @@
                         </div>
                     </div>                            
 
-                    <div class="pagination-wrap">
-                        <ul class="pagintn">                                  
-                            <li><a href="#">01</a></li>
-                            <li><a href="#">02</a></li>
-                            <li><a href="#">03</a></li>
-                            <li><a href="#">04</a></li>
-                            <li><a href="#">05</a></li>
-                            <li><a href="#">...</a></li>
-                            <li><a href="#">15</a></li>                                    
-                        </ul>
-                    </div>
+                    <pagination-controls (pageChange)="p =$event"></pagination-controls>
                 </div>
             </div>
         </div>

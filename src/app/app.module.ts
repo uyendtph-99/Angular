@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,7 +51,12 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule, 
+    NgxPaginationModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'success' // set defaults here
+    })
+
   ],
   providers: [],
   bootstrap: [AppComponent]
