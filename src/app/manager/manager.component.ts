@@ -12,6 +12,7 @@ export class ManagerComponent implements OnInit {
   product: Product = new Product();
   products : Product[];
   cates: Category;
+  searchText;
   public popoverTitle: string = 'Delete Product';
   public popoverMessage: string = 'Bạn có chắc chắn muốn xóa sản phẩm này?';
   public  confirmText: string = 'Yes <i class="glyphicon glyphicon-ok"></i>';
@@ -46,7 +47,7 @@ export class ManagerComponent implements OnInit {
   addProduct(){
     this.routes.params.subscribe(param => {
       this.productService.addProduct(this.product,param.cateId).subscribe(data =>{
-        this.products.push(data);
+        //this.products.push(data);
         console.log(data);
       });
     })

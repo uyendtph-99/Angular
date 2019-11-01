@@ -71,6 +71,9 @@
             <div class="divider-full-1"></div>
 
             <div class="result-bar block-inline">
+                <ul *ngIf="cate" style="display:inline-block">
+                    <h3>{{cate.name}}</h3>(Có {{products.length}} sản phẩm)
+                </ul>
                 <ul class="view-tabs">
                     <li class="active">
                         <a href="#grid-view" data-toggle="tab">                                                    

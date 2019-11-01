@@ -21,7 +21,7 @@
             <div class="col-lg-6">
                 <div class="search-hero">
                     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
-                        placeholder="&#61442;  Start searching for a hero by id or name or country">
+                        placeholder="Search">
                 </div>
             </div>
             <div class="col-lg-12">
@@ -44,7 +44,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let product of products | filter:searchText | paginate: {itemsPerPage:5, currentPage: p}">
+                            <tr
+                                *ngFor="let product of products | filter:searchText | paginate: {itemsPerPage:5, currentPage: p}">
                                 <td>{{product.id}}</td>
                                 <td><a
                                         routerLink="/category/{{product.cateId}}/product/detail/{{product.id}}">{{product.name}}</a>
@@ -101,6 +102,13 @@
                                     <label for="">Mô tả ngắn</label>
                                     <input type="text" class="form-control" [(ngModel)]="product.desc" name="desc">
                                 </div>
+                                <label for="">Trạng thái</label>
+                                <div>
+                                    <input type="checkbox" [(ngModel)]="product.status" name="status"
+                                        value="1">
+                                    <span style="margin-left:20px">Còn hàng</span>
+                                </div>
+
                             </form>
                         </div>
                         <div class="modal-footer">

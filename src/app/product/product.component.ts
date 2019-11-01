@@ -11,6 +11,7 @@ import { Category } from '../Category';
 })
 export class ProductComponent implements OnInit {
   cates: Category[];
+  cate: Category;
   products: Product[];
   constructor(
     private productService: ProductService,
@@ -19,6 +20,15 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.getProducts();
+    this.getCategory();
+  }
+  getCategory(){
+    this.routes.params.subscribe(param => {
+      console.log(param);
+      this.productService.getCategory(param.cateId).subscribe(data => {
+        this.cate = data;
+      })
+    })
   }
   getProducts(){
     this.routes.params.subscribe(param => {
